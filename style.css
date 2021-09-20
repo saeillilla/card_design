@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+
+}
+body{
+    display: flex; justify-content: center;
+    align-items: center;
+
+}
+
+.card{
+    width: 250px; height: 250px;
+    margin: 2em;display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    text-align: center  ;
+    position: relative; cursor: pointer;
+    transition: all .4s;
+}
+
+.card:hover{color: rgb(255, 255, 255);}
+.card::before , .card::after{
+    content: '';
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%;height: 100%;
+    background: rgb(243, 243, 243);
+    z-index: -1; border-radius: 10px;
+    animation: all .4s;
+    
+}
+.card::after{
+    background: rgb(250, 113, 120);
+    transform-origin: right bottom;
+    transform: translate(5%,5%) scale(0.2);
+    border-radius: 50%;transition: all .3s;
+    
+}
+
+.card:hover::after{
+    transform: translate(0) scale(1);
+    border-radius: 0; border-radius: 10px;
+}
+
+.card:hover::before{
+    transform-origin: right bottom;
+    transform: translate(10%,10%) scale(0.3);
+    border-radius: 50%;z-index: 1;
+}
